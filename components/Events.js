@@ -40,7 +40,7 @@ export const Events = () => {
               <div className="container">
                 <h4>{artist.length} Upcoming Events</h4>
               </div>
-              <div className="d-flex flex-wrap">
+              <div className="d-flex flex-wrap justify-content-center">
                 {artist?.map((post) => {
                   return (
                     <EventDetails
