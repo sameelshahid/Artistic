@@ -7,7 +7,7 @@ const NotFound = () => {
       <Head>
         <title>Not Found</title>
       </Head>
-      <div> Artist Not Found</div>
+      <h4>Artist Not Found</h4>
     </>
   );
 };

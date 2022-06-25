@@ -6,6 +6,7 @@
       transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
   }
+
   .spin::before {
     animation: 1.5s linear infinite spinner;
     animation-play-state: inherit;
@@ -21,12 +22,22 @@
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
   }
+
   .spin {
     position: relative;
     top: 20px;
   }
+
   .cardblock {
     margin-top: 10px;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+  .textDec {
+    text-decoration: none;
+    color: rgb(33, 37, 41)
   }
 
   @media only screen and (max-width: 600px) {

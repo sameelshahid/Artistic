@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import styles from '../styles/Search.module.css'
+import { Artist } from './Artist';
+import Link from 'next/link';
 
 // Import the FontAwesomeIcon component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +26,7 @@ const Search = () => {
       <div className={styles.wrap}>
         <form onSubmit={submitContact}>
             <div className={styles.search}>
-             <input type="text" className={styles.searchTerm} name="search_value" placeholder="Search artist" required />
+             <input type="text" className={styles.searchTerm} name="search_value" placeholder="Search Artist" required />
                 <button type="submit" className={styles.searchButton}>
                     <FontAwesomeIcon
                         icon={faSearch}
