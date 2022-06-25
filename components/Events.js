@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Styles from "../styles/Artist.module.css";
 import { EventDetails } from "./EventDetails";
+import Head from "next/head";
 
 export const Events = () => {
   const router = useRouter();
@@ -25,6 +26,9 @@ export const Events = () => {
   }, [name]);
   return (
     <>
+      <Head>
+        <title>{name}</title>
+      </Head>
       {loading == true ? (
         <div className={Styles.spin}></div>
       ) : (
