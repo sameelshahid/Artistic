@@ -3,7 +3,7 @@ By Sameel Shahid
 
 Example application written in [next.js](https://github.com/zeit/next.js/) that makes use of [bandsintown API](https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0).
 
-*Each search request is sent directly to bandsintown url to first fetch the Artist, Then by clicking on the artist card, Another request is sent to get the events of the Artist.*
+*Each search request is sent directly to bandsintown url to first fetch the Artist, After successful results, Another request is sent to get the events of the Artist.*
 
 ## Getting Started
 
