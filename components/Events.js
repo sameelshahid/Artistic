@@ -8,7 +8,7 @@ import Head from "next/head";
 export const Events = () => {
   const router = useRouter();
   const { name } = router.query;
-  const [artist, setArtist] = useState([]);
+  const [artist_event, setArtistEvent] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Events = () => {
           "?app_id=abc"
       )
         .then((res) => res.json())
-        .then((r) => setArtist(r) & setLoading(false));
+        .then((r) => setArtistEvent(r) & setLoading(false));
     }
   }, [name]);
   return (
@@ -33,15 +33,16 @@ export const Events = () => {
         <div className={Styles.spin}></div>
       ) : (
         <>
-          {artist.length == 0 ? (
+          {artist_event.length == 0 ? (
             <h4 className="container text-center">No Events Found</h4>
           ) : (
             <>
               <div className="container">
-                <h4>{artist.length} Upcoming Events</h4>
+                <h3 className="text-center">{name}</h3>
+                <h4>{artist_event.length} Upcoming Events</h4>
               </div>
               <div className="d-flex flex-wrap justify-content-center">
-                {artist?.map((post) => {
+                {artist_event?.map((post) => {
                   return (
                     <EventDetails
                       key={post.id}
