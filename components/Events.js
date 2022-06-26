@@ -39,7 +39,7 @@ export const Events = () => {
             <>
               <div className="container">
                 <h3 className="text-center">{name}</h3>
-                <h4>{artist_event.length} Upcoming Events</h4>
+                <h4 className={Styles.textAlignment}>{artist_event.length} Upcoming Events</h4>
               </div>
               <div className="d-flex flex-wrap justify-content-center">
                 {artist_event?.map((post) => {
