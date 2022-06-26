@@ -6,12 +6,12 @@ const Header = () => {
     <div>
       <Link href="/">
         <a className={headerStyles.a}>
-          <h1 className={headerStyles.title}>
+          <h1 data-testid="title" className={headerStyles.title}>
             <span>Art</span>istic
           </h1>
         </a>
       </Link>
-      <p className={headerStyles.description}>
+      <p data-testid="description" className={headerStyles.description}>
         Now you can search for your favourite artist and view their upcoming
         events
       </p>
