@@ -9,9 +9,10 @@ import { Events } from ".//Events";
 export const Artist = () => {
   const router = useRouter();
   const { name } = router.query;
-  const [artist, setArtist] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [artist, setArtist] = useState({}); 
+  const [loading, setLoading] = useState(false); // added to manipulate the loader until data is fetched
 
+  // getting the result from API and assigning it to artist
   useEffect(() => {
     setLoading(true);
     if (name) {

@@ -5,7 +5,7 @@ import styles from '../styles/Search.module.css'
 // Import the FontAwesomeIcon component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import the icons you need
+// To import the icons needed
 import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";

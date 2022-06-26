@@ -8,9 +8,10 @@ import Head from "next/head";
 export const Events = () => {
   const router = useRouter();
   const { name } = router.query;
-  const [artist_event, setArtistEvent] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [artist_event, setArtistEvent] = useState([]); 
+  const [loading, setLoading] = useState(false); // added to manipulate the loader until data is fetched
 
+  // getting the result from API and assigning it to artist_event
   useEffect(() => {
     setLoading(true);
     if (name) {
@@ -45,6 +46,7 @@ export const Events = () => {
               <div className="d-flex flex-wrap justify-content-center">
                 {artist_event?.map((post) => {
                   return (
+                    // Passing the data to EventDetails for single event
                     <EventDetails
                       key={post.id}
                       country={post.venue.country}
