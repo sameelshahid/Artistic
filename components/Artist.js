@@ -1,32 +1,30 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import NotFound from "../components/NotFound";
 import Styles from "../styles/Artist.module.css";
 
 export const Artist = () => {
-    const router = useRouter();
-    const { name } = router.query;
-    const [artist, setArtist] = useState({});
-    const [loading, setLoading] = useState(false);
-    
-    useEffect(() => {
-      setLoading(true);
-      
-      if (name) {
-        fetch("https://rest.bandsintown.com/artists/" + name + "?app_id=abc")
-          .then((res) => res.json())
-          .then((r) => setArtist(r) & setLoading(false));
-      }
-      return () => {}
-    }, [name]);
-  
-  
-    const fb_link = artist.links
-      ? artist.links?.find((item) => item.type === "facebook")?.url
-      : "Facebook not found";
+  const router = useRouter();
+  const { name } = router.query;
+  const [artist, setArtist] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+
+    if (name) {
+      fetch("https://rest.bandsintown.com/artists/" + name + "?app_id=abc")
+        .then((res) => res.json())
+        .then((r) => setArtist(r) & setLoading(false));
+    }
+    return () => {};
+  }, [name]);
+
+  const fb_link = artist.links
+    ? artist.links?.find((item) => item.type === "facebook")?.url
+    : "Facebook not found";
   return (
     <>
       {loading == true ? (
@@ -40,8 +38,13 @@ export const Artist = () => {
               <Head>
                 <title>{artist.name}</title>
               </Head>
-              <a className={Styles.textDec} href={`/artist/${artist.name}/events`}>
-                <div className={`card shadow-sm p-3 bg-white rounded ${Styles.pointer}`}>
+              <a
+                className={Styles.textDec}
+                href={`/artist/${artist.name}/events`}
+              >
+                <div
+                  className={`card shadow-sm p-3 bg-white rounded ${Styles.pointer}`}
+                >
                   <div className={`${Styles.row} row no-gutters`}>
                     <div className="col-auto">
                       <img
@@ -81,5 +84,5 @@ export const Artist = () => {
         </>
       )}
     </>
-  )
-}
+  );
+};

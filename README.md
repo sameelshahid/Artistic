@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artistic using Bandsintown API
+By Sameel Shahid
+
+Example application written in [next.js](https://github.com/zeit/next.js/) that makes use of [bandsintown API](https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0).
+
+*Each search request is sent directly to bandsintown url to first fetch the Artist, Then by clicking on the artist card, Another request is sent to get the events of the Artist.*
 
 ## Getting Started
 
-First, run the development server:
+### ___With Docker___
+- This is a containerized application that will run on Docker.
 
-```bash
+- To start the project, run the following commands:
+
+
+```sh
+docker build -t frontend . 
+# then
+docker run -p 3000:3000 frontend 
+```
+### ___Without Docker___
+
+#### Before calling any npm script, install all dependencies
+
+```
+npm install
+```
+
+#### To run all tests
+```
+npm run test
+```
+
+#### To run application in development mode
+```
 npm run dev
-# or
-yarn dev
+```
+
+#### To run application in production mode
+```
+npm run build
+npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
