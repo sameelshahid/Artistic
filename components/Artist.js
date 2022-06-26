@@ -73,7 +73,7 @@ export const Artist = () => {
                   </div>
                 </div>
               </div>
-              <div className="mb-4"></div>
+              <div className="mb-5"></div>
               <Events />
             </>
           )}
